@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Goal;
 use Illuminate\Http\Request;
-use lluminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class GoalController extends Controller
 {
