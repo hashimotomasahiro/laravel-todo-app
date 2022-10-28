@@ -77,7 +77,7 @@ return [
                 'smtp',
                 'log',
             ],
-
+            // 以下パスワード再設定時エラー解消用にコード追加
         'stream' => [
             'ssl' => [
                 'allow_self_signed' => true,
