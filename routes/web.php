@@ -14,10 +14,10 @@ use App\Http\Controllers\GoalController;
 |
 */
 
-Route::get('/', [GoalController::class, 'index']);
+Route::get('/', [GoalController::class, 'index'])->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('goals', GoalController::class)->only(['index', 'store', 'update', 'destroy']);
+Route::resource('goals', GoalController::class)->only(['index', 'store', 'update', 'destroy'])->middleware('auth');
