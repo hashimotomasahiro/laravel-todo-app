@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @push('styles')
-     <link rel="stylesheet" href="{{ asset('/css/style.css')  }}" >
- @endpush
- 
- @push('scripts')
-     <script src="{{ asset('/js/script.js') }}"></script>
- @endpush
+    <link rel="stylesheet" href="{{ asset('/css/style.css')  }}" >
+@endpush
+
+@push('scripts')
+<script src="{{ asset('/js/script.js') }}"></script>
+@endpush
 
 @section('content')
     <div class="container h-100"> 
@@ -40,7 +40,7 @@
         </div>              
                 
          <div class="row row-cols-1 row row-cols-md-2 row-cols-lg-3 g-4">                         
-             @foreach ($goals as $goal) 
+            @foreach ($goals as $goal) 
              
                 <!-- 目標の編集用モーダル -->
                 @include('modals.edit_goal') 
@@ -51,22 +51,22 @@
                 <!-- ToDoの追加用モーダル -->
                 @include('modals.add_todo')  
  
-                 <div class="col">     
-                     <div class="card bg-light">
-                         <div class="card-body d-flex justify-content-between align-items-center">
-                             <h4 class="card-title ms-1 mb-0">{{ $goal->title }}</h4>
-                             <div class="d-flex align-items-center">                                 
-                             <a href="#" class="px-2 fs-5 fw-bold link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTodoModal{{ $goal->id }}">＋</a>    
-                             <div class="dropdown">
-                                     <a href="#" class="dropdown-toggle px-1 fs-5 fw-bold link-dark text-decoration-none menu-icon" id="dropdownGoalMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">︙</a>
-                                     <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="dropdownGoalMenuLink">
-                                         <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editGoalModal{{ $goal->id }}">編集</a></li>                                   
-                                         <div class="dropdown-divider"></div>
-                                         <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteGoalModal{{ $goal->id }}">削除</a></li>                                                                                                          
-                                     </ul>
-                                 </div>
-                             </div>
-                         </div>
+                <div class="col">     
+                    <div class="card bg-light">
+                        <div class="card-body d-flex justify-content-between align-items-center">
+                            <h4 class="card-title ms-1 mb-0">{{ $goal->title }}</h4>
+                            <div class="d-flex align-items-center">                                 
+                            <a href="#" class="px-2 fs-5 fw-bold link-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#addTodoModal{{ $goal->id }}">＋</a>    
+                            <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle px-1 fs-5 fw-bold link-dark text-decoration-none menu-icon" id="dropdownGoalMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">︙</a>
+                                    <ul class="dropdown-menu dropdown-menu-end text-center" aria-labelledby="dropdownGoalMenuLink">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editGoalModal{{ $goal->id }}">編集</a></li>                                   
+                                        <div class="dropdown-divider"></div>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#deleteGoalModal{{ $goal->id }}">削除</a></li>                                                                                                          
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
 
                         @foreach ($goal->todos()->orderBy('done', 'asc')->get() as $todo) 
                             <!-- ToDoの編集用モーダル -->
@@ -79,11 +79,11 @@
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between align-items-center mb-2">
                                         <h5 class="card-title ms-1 mb-0">
-                                             @if ($todo->done)
-                                                 <s>{{ $todo->content }}</s>
-                                             @else
-                                                 {{ $todo->content }}
-                                             @endif    
+                                            @if ($todo->done)
+                                                <s>{{ $todo->content }}</s>
+                                            @else
+                                                {{ $todo->content }}
+                                            @endif    
                                         </h5>
                                         <div class="dropdown">
                                             <a href="#" class="dropdown-toggle px-1 fs-5 fw-bold link-dark text-decoration-none menu-icon" id="dropdownTodoMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">︙</a>
@@ -113,9 +113,9 @@
                             </div>
                         @endforeach
 
-                     </div>                           
-                 </div>
+                    </div>                           
+                </div>
              @endforeach                       
-         </div>                  
+        </div>                  
     </div>
 @endsection

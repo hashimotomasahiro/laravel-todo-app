@@ -15,8 +15,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    
-    @stack('styles'
+
+    @stack('styles')
 </head>
 <body style="padding: 60px 0;">
     <div id="app">
