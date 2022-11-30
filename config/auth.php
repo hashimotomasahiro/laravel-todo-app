@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admins' => [
+          'driver' => 'session',
+          'provider' => 'admins',  
+        ],
     ],
 
     /*
@@ -64,6 +69,13 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'admins' => [
+            // sessionを指定することで、セッションでログイン状態を保持するようにしている
+            'driver' => 'eloquent',
+            // 認証に使用する確認方法（そのユーザーが存在するかどうかなど）として、adminsを指定している
+            'model' => App\Admin::class,
+        ]  
 
         // 'users' => [
         //     'driver' => 'database',

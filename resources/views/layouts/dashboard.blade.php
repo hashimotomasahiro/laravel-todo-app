@@ -24,11 +24,12 @@
     @component('components.dashboard.header')
     @endcomponent
 
+    @if(Auth::guard('admins')->check())
     <div class="col-3 mt-3">
         @component('components.dashboard.sidebar')
         @endcomponent
     </div>
-
+    @endauth
         @include('layouts.app')
 
         <main class="py-4">

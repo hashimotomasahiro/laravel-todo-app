@@ -29,5 +29,15 @@ Route::resource('goals.todos', TodoController::class)->only(['store', 'update', 
 
 Route::resource('tags', TagController::class)->only(['store', 'update', 'destroy'])->middleware('auth');
 
-Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+// Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index');
+Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index']);
 
+Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+    Route::get('login', 'Dashboard\Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'Dashboard\Auth\LoginController@login')->name('login');
+});
+
+// Route::group(['prefix' => 'dashboard', 'as' => 'dashboard.'], function () {
+//     Route::get('login', Dashboard\Auth\LoginController::class, 'showLoginForm')->name('login');
+//     Route::post('login', Dashboard\Auth\LoginController::class, 'login')->name('login');
+// });

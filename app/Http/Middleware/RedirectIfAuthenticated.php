@@ -19,6 +19,12 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, ...$guards)
     {
+        $redirect_url = '/';
+ 
+        if ($guards == 'admins') {
+            $redirect_url = '/dashboard';
+        }
+
         $guards = empty($guards) ? [null] : $guards;
 
         foreach ($guards as $guard) {
