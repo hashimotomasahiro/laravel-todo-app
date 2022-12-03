@@ -21,4 +21,8 @@ use HasFactory;
         return $this->belongsToMany(Tag::class)->withTimestamps();
     }    
 
+    public function calender() {
+        return $this->belongsTo(Calender::class);
+    }
+
 }
