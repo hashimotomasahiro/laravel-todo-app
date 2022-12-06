@@ -36,7 +36,7 @@
                 <div class="d-flex align-items-center">
                     <span class="fs-5 fw-bold">+</span>&nbsp;タグの追加
                 </div>
-            </a>          
+            </a>   
         </div>              
                 
          <div class="row row-cols-1 row row-cols-md-2 row-cols-lg-3 g-4">                         
