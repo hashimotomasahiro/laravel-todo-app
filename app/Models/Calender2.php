@@ -4,14 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 
-class Calender extends Model
+class Calender2 extends Model
 {
     use HasFactory;
 
-    public function todos() {
-        return $this->hasMany(Todo::class);
+    public function user() {
+        return $this->belongsTo(User::class);
     }
 }
-
