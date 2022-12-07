@@ -52,6 +52,10 @@ class User extends Authenticatable
 
     public function tags() {
         return $this->hasMany(Tag::class);
-    }       
+    }      
+    
+    public function calender2() {
+        return $this->belongsTo(Calender2::class);
+    }
 
 }

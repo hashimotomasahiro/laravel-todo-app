@@ -30,5 +30,7 @@
     </div>
 
     @stack('scripts')
+
+    @include('layouts.calender')
 </body>
 </html>

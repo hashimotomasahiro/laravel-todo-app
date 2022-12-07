@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoalController;
 use App\Http\Controllers\TodoController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\Calender2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,10 @@ use App\Http\Controllers\TagController;
 
 Route::get('/', [GoalController::class, 'index'])->middleware('auth');
 
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -27,3 +32,5 @@ Route::resource('goals', GoalController::class)->only(['index', 'store', 'update
 Route::resource('goals.todos', TodoController::class)->only(['store', 'update', 'destroy'])->middleware('auth');
 
 Route::resource('tags', TagController::class)->only(['store', 'update', 'destroy'])->middleware('auth');
+
+Route::resource('calenders',Calender2Controller::class )->only(['index', 'store', 'update', 'destroy'])->middleware('auth');
