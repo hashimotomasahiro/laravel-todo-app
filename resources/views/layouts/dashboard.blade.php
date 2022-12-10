@@ -24,6 +24,7 @@
     @component('components.dashboard.header')
     @endcomponent
 
+    <!-- 管理画面にログインしていない状態でサイドバーが表示されてしまう不具合を修正 -->
     @if(Auth::guard('admins')->check())
     <div class="col-3 mt-3">
         @component('components.dashboard.sidebar')

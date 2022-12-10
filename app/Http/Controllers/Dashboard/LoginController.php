@@ -28,7 +28,7 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo = '/dashboard';
-
+    //これはログイン後にリダイレクトするURLを指定している
     /**
      * Create a new controller instance.
      *

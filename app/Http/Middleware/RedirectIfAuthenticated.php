@@ -21,6 +21,7 @@ class RedirectIfAuthenticated
     {
         $redirect_url = '/';
  
+        // $guardがadmins、つまり管理者である場合に、/dashboardにリダイレクト
         if ($guards == 'admins') {
             $redirect_url = '/dashboard';
         }
